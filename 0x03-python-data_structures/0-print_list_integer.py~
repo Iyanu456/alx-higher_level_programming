@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+list = [1, 2, 3, 4, 5]
+def print_list_integer(list=[]):
+    for integers in list:
+        print("{}".format(integers))
+print_list_integer(list)
