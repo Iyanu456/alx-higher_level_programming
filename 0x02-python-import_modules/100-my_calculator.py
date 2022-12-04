@@ -12,7 +12,7 @@ func = [add(a, b), sub(a, b), mul(a, b), div(a, b)]
 for i in range(0, 4):
     if sys.argv[2] == operator[i]:
         print("{} {} {} = {}".format(int(sys.argv[1]), sys.argv[2], int(sys.argv[3]), func[i]))
-        return
+        sys.exit()
     else:
         continue
 print("Unknown operator. Available operators: +, -, * and /")
