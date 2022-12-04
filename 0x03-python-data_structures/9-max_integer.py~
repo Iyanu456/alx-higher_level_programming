@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+def max_integer(my_list=[]):
+    max_integer = my_list[0]
+    for i in my_list:
+        if i >= max_integer:
+            max_integer = i;
+        else:
+            max_integer = max_integer
+    return (max_integer)
+integers = [1, 115, 3, 19, 67, 90, 70]
+print("{}: max integer = {}".format(integers, max_integer(integers)))
