@@ -11,7 +11,7 @@ b = int(sys.argv[3])
 func = [add(a, b), sub(a, b), mul(a, b), div(a, b)]
 for i in range(0, 4):
     if sys.argv[2] == operator[i]:
-        print("{} {} {} = {}".format(sys.argv[1], sys.argv[2], sys.argv[3], func[i]))
+        print("{} {} {} = {}".format(a, sys.argv[2], b, func[i]))
         sys.exit()
     else:
         continue
