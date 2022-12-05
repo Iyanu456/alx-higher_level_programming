@@ -1,8 +1,0 @@
-#!/usr/bin/python3
-def multiple_returns(sentence):
-    count = 0
-    for i in sentence:
-        count += 1
-    print(f"{sentence}: word count = {count}")
-sentence = "hello how are you?"
-multiple_returns(sentence)
