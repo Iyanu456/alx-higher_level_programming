@@ -13,7 +13,10 @@ def safe_print_list_integers(my_list=[], x=0):
                 print()
                 return count
         except (ValueError, TypeError):
-            index += 1
-            limit += 1
-            pass
+            try:
+                index += 1
+                limit += 1
+                pass
+            except IndexError:
+                return count
     return count
