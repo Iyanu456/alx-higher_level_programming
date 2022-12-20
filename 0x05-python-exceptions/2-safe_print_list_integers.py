@@ -1,14 +1,22 @@
 #!/usr/bin/python3
 def safe_print_list_integers(my_list=[], x=0):
+    limit = x
     index = 0
-    while index < x:
+    count = 0
+    max_count = 0
+    for i in my_list:
+        max_count += 1
+    while True:
         try:
-            print("{:d}".format(my_list[index]), end="")
+            if index < limit and index < max_count:
+                print("{:d}".format(my_list[index]), end="")
+                index += 1
+                count += 1
+            else:
+                print()
+                return count
+        except (ValueError, TypeError):
             index += 1
-        except (ValueError, TypeError, IndexError):
+            limit += 1
             pass
-    print()
-    return index
-list =[1, 2, 3, "School", "Iyanu", 5, 6]
-count = safe_print_list_integers(list, 5)
-print("{}".format(count))
+    return count
