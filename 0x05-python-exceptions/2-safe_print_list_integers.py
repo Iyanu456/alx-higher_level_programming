@@ -5,13 +5,11 @@ def safe_print_list_integers(my_list=[], x=0):
     count = 0
     while True:
         try:
-            try:
-                if index < limit:
-                    print("{:d}".format(my_list[index]), end="")
-                    index += 1
-                    count += 1
-            except IndexError:
-                print()
+            if index < limit:
+                print("{:d}".format(my_list[index]), end="")
+                index += 1
+                count += 1
+            else:
                 return count
         except (ValueError, TypeError):
             index += 1
