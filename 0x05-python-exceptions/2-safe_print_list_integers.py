@@ -13,6 +13,9 @@ def safe_print_list_integers(my_list=[], x=0):
                 print()
                 return count
         except (ValueError, TypeError):
+            if not my_list[index]:
+                print()
+                return count
             index += 1
             limit += 1
             pass
