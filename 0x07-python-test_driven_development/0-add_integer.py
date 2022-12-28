@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-"""Defines an integer addition function"""
+"""Defines an integer addition function
+
+:param a: int/float
+:param b: int/float
+"""
 
 
 def add_integer(a, b=98):
-    """Returns the integer addition of a and b.
+    """Adds tow integers/floats together
 
-    Float arguments are typecasted to ints before addition is performed.
-
-    Raises:
-    TypeError: if either a or b is a non-integer float."""
+    :return: int"""
 
     if ((not isinstance(a, int) and not isinstance(a, float))):
         raise TypeError("a must be an integer")
