@@ -1,7 +1,20 @@
 #!/usr/bin/python3
-"""Defines a matrix division function"""
+"""
+Defines a matrix division function
+
+"""
+
 
 def matrix_divided(matrix, div):
+    """
+    Matrix division function.
+
+    :param matrix: list of lists (matrix)
+    :param div: divisor (int)
+    :return: new_matrix
+
+    """
+
     if (not isinstance(matrix, list) or matrix == [] or
             not all(isinstance(row, list) for row in matrix) or
             not all((isinstance(element, int) or isinstance(element, float))
@@ -18,6 +31,6 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    new_matrix = [list(map(lambda x: round((x / div), 2), row)) for row in matrix]
+    new_matrix = [list(map(lambda x: round((x / div), 2), i)) for i in matrix]
 
     return new_matrix
