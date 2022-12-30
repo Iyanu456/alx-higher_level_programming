@@ -2,11 +2,18 @@
 """
 Module that contains the print_square function
 
+print_square functions prints a square wit the `#` character
 """
 
 
 def print_square(size):
-    
+    """
+    Prints a square of size ```size```
+
+    :param size: size of square (int)
+
+    """
+
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
 
@@ -19,4 +26,5 @@ def print_square(size):
 
     for i in range(size):
         print("#" * size)
+
     return
