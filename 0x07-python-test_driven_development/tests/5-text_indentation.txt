@@ -46,4 +46,26 @@ Similarly, no spaces are printed at the end of a line
 	ALX is great, isn't it?
 	<BLANKLINE>
 
-	
+Newlines within a string are printed as normal
+
+::
+
+	>>> text_indentation("This is a new line: \n")
+	This is a new line:
+	<BLANKLINE>
+	<BLANKLINE>
+
+Invalid text
+============
+
+The parameter ```text``` must be a string otherwise a TypeError is raised
+
+::
+
+	>>> text_indentation(5567)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+	>>> text_indentation(["Python", "is", "cool"])
+	Traceback (most recent call last):
+	TypeError: text must be a string
