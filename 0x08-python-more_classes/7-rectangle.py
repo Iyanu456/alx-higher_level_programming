@@ -62,7 +62,7 @@ class Rectangle():
     def __str__(self):
         """Returns the printaable representation of the Rectangle"""
 
-        if self.__width == 0:
+        if self.__width == 0 or self.__height == 0:
             return ("")
 
         rect_str = ""
