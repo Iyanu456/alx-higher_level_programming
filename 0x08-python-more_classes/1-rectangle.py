@@ -9,6 +9,8 @@ class Rectangle():
     """Class that defines a rectangle"""
 
     def __init__(self, width=0, height=0):
+        """Initializes a new rectangle"""
+
         self.width = width
         self.height = height
 
@@ -16,7 +18,7 @@ class Rectangle():
     def width(self):
         """Gets/set the width of a rectangle"""
 
-        return (__self.width)
+        return (self.__width)
 
     @width.setter
     def width(self, value):
