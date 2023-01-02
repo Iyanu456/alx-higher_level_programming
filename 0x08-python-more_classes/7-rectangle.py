@@ -9,7 +9,7 @@ class Rectangle():
     """Class that defines a rectangle"""
 
     number_of_instances = 0
-    print_symbol = ""
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Initializes a new rectangle."""
@@ -62,10 +62,9 @@ class Rectangle():
     def __str__(self):
         """Returns the printaable representation of the Rectangle"""
 
-        if self.__width == 0 or self.__height == 0:
-            return ("")
-
         rect_str = ""
+        if self.__width == 0 or self.__height == 0:
+            return (rect_str)
 
         for i in range(self.__height):
             rect_str += str(self.print_symbol) * self.width
