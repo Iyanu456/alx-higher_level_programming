@@ -9,7 +9,7 @@ class Rectangle():
     """Class that defines a rectangle"""
 
     number_of_instances = 0
-    print_symbol = '#'
+    print_symbol = ""
 
     def __init__(self, width=0, height=0):
         """Initializes a new rectangle."""
@@ -65,14 +65,14 @@ class Rectangle():
         if self.__width == 0:
             return ("")
 
-        rect = []
+        rect_str = ""
 
         for i in range(self.__height):
-            [rect.append(self.print_symbol) for j in range(self.__width)]
-            if i != self.__height - 1:
-                rect.append("\n")
-
-        return ("".join(rect))
+            rect_str += str(self.print_symbol) * self.__width
+            if i == self.__height - 1:
+                break
+            rect_str += "\n"
+        return (rect_str)
 
     def __repr__(self):
         """Return the string representation of the Rectangle"""
