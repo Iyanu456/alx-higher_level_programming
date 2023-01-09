@@ -1,4 +1,10 @@
 #!/bin/bash
 git add .
-git commit -m 'Default message'
+if [ $# -eq 0 ]
+then
+	git commit -m 'default message'
+else
+	MESSAGE="*$"
+	git commit -m '$MESSAGE'
+fi
 git push
