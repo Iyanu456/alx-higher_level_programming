@@ -5,6 +5,6 @@ then
 	git commit -m 'default message'
 else
 	MESSAGE="*$"
-	git commit -m '$MESSAGE'
+	git commit -m "$MESSAGE"
 fi
 git push
