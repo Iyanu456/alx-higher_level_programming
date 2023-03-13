@@ -1,5 +1,5 @@
-#!/usr/bin/node
-let num = process.argv[2];
+i#!/usr/bin/node
+const num = process.argv[2];
 
 if (isNaN(num)) {
   console.log('Missing size');
