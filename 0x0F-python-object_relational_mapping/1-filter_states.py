@@ -11,7 +11,8 @@ connect to the MySQL server
 prepare a cursor object using cursor() method
 execute SQL query to select all states from the database
 fetch all the rows using fetchall() method
-print the results
+print the results if only the state has a name that
+starts with 'N'
 disconnect from server
 """
 
