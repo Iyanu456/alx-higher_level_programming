@@ -29,7 +29,8 @@ if __name__ == "__main__":
         passwd=mysql_password, db=database_name)
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY\
+	id ASC".format(argv[4]))
 
     rows = cursor.fetchall()
 
