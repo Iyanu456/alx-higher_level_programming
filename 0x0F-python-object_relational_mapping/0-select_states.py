@@ -11,7 +11,8 @@ parameter
 
 """
 
-if __name__ == "__main__":
+
+def connect():
     """creates a new sql server with a username, database and password
         parameters
         hdkhdkvdvdhkdkvvdkhdvdhkvkdkdvkdvdkhvdkhvdkdvdkvdkvdkvd
@@ -26,3 +27,6 @@ if __name__ == "__main__":
         print(i)
     cursor.close()
     db.close()
+
+if __name__ == "__main__":
+    connect()
