@@ -1,32 +1,29 @@
 #!/usr/bin/python3
-
 import MySQLdb
-from sys import argv
+import sys
 
 """
-0-select_states.py script that lists all states from the database.
-
-It connects to an sql server with a user, password and database
-parameter
-
+    get the mysql username, password, and database name from command line arguments
+    connect to the MySQL server
+    prepare a cursor object using cursor() method
+    execute SQL query to select all states from the database
+    fetch all the rows using fetchall() method
+    print the results
+    disconnect from server
 """
+mysql_user = sys.argv[1]
+mysql_password = sys.argv[2]
+database_name = sys.argv[3]
 
+db = MySQLdb.connect(host="localhost", port=3306, user=mysql_user, passwd=mysql_password, db=database_name)
+cursor = db.cursor()
 
-def connect():
-    """creates a new sql server with a username, database and password
-        parameters
-        hdkhdkvdvdhkdkvvdkhdvdhkvkdkdvkdvdkhvdkhvdkdvdkvdkvdkvd
-    """
-    con = MySQLdb.connect(
-            host="localhost", port=3306, user=argv[1],
-            password=argv[2], database=argv[3])
-    cursor = con.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    db = cursor.fetchall()
-    for i in db:
-        print(i)
-    cursor.close()
-    db.close()
+cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
 
-if __name__ == "__main__":
-    connect()
+rows = cursor.fetchall()
+
+for row in rows:
+    print(row)
+
+db.close()
+
