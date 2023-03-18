@@ -1,15 +1,17 @@
 #!/usr/bin/python3
 """
 script that list all states from the database hbtn_0e_0_usa
+
 it takes in three arguments:
-    mysql username, mysql password, and database name
-    get the mysql username, password, and database name from command line arguments
-    connect to the MySQL server
-    prepare a cursor object using cursor() method
-    execute SQL query to select all states from the database
-    fetch all the rows using fetchall() method
-    print the results
-    disconnect from server
+mysql username, mysql password, and database name
+
+get the mysql username, password, and database name from command line arguments
+connect to the MySQL server
+prepare a cursor object using cursor() method
+execute SQL query to select all states from the database
+fetch all the rows using fetchall() method
+print the results
+disconnect from server
 """
 
 import MySQLdb
@@ -22,8 +24,8 @@ if __name__ == "__main__":
     database_name = sys.argv[3]
 
     db = MySQLdb.connect(
-            host="localhost", port=3306, user=mysql_user, 
-            passwd=mysql_password, db=database_name)
+        host="localhost", port=3306, user=mysql_user,
+        passwd=mysql_password, db=database_name)
     cursor = db.cursor()
 
     cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
@@ -33,4 +35,3 @@ if __name__ == "__main__":
     for row in rows:
         print(row)
     db.close()
-
