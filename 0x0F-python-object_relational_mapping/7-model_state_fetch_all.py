@@ -20,16 +20,14 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
-username = argv[1]
-password = argv[2]
-database = argv[3]
-
 if __name__ == "__main__":
     engine = create_engine(
-             f'mysql+mysqldb://{username}:{password}@localhost/{database}')
+            'mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1],
+                                                        argv[2],
+                                                        argv[3]))
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for states in session.query(State).order_by(State.id):
+    for state in session.query(State).order_by(State.id):
         print("{}: {}".format(state.id, state.name))
     session.close()
