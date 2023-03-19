@@ -27,3 +27,9 @@ database = argv[3]
 if __name__ == "__main__":
     engine = create_engine(
              f'mysql+mysqldb://{username}:{password}@localhost/{database}')
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    for states in session.query(State).order_by(State.id):
+        print("{}: {}".format(state.id, state.name))
+    session.close()
